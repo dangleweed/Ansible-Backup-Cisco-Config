@@ -4,8 +4,7 @@
   hosts: localhost
   gather_facts: yes
   connection: local
-  debug:
-    var=ansible_date_time.date
+  
   tasks:
     - name: timestamp
       local_action: command date +%Y%m%d
