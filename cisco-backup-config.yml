@@ -4,6 +4,8 @@
   hosts: localhost
   gather_facts: yes
   connection: local
+  debug:
+    var=ansible_date_time.date
   tasks:
     - name: timestamp
       local_action: command date +%Y%m%d
@@ -14,9 +16,6 @@
         path: /etc/ansible/backups/{{ timestamp.stdout }}
         state: directory
         mode: 0755
-        
-    - debug:
-      msg: "{{ timestamp.stdout[0] }}"
 
 - name: Save Configurations (IOS)
   hosts: cisco-ios
