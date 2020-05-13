@@ -34,8 +34,8 @@
         commands: show run
       register: show_run_ios
 
-#    - debug:
-#        msg: "{{ show_run_ios.stdout[0] }}"
+    - debug:
+       msg: "{{ show_run_ios.stdout[0] }}"
 
     - copy:
         content: "{{ show_run_ios.stdout[0] }}"
@@ -60,7 +60,7 @@
         commands: show run
       register: show_run_nxos
 
-    - debug: var=stdout
+    - debug:
        # msg: "{{ show_run_nxos.stdout[0] }}"
        
 
