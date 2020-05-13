@@ -39,7 +39,7 @@
 
     - copy:
         content: "{{ show_run_ios.stdout[0] }}"
-        dest: "/etc/ansible/backups/{{ timestamp.stdout }}/01_{{ timestamp.stdout }}.txt"
+        dest: "/etc/ansible/backups/{{ timestamp.stdout }}/01-{{ timestamp.stdout }}.txt"
 
 - name: Save Configurations (NX-OS)
   hosts: cisco-nxos
